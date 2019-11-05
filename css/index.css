@@ -11,8 +11,6 @@ copy{
     color: #FEFFFF;
 }
 
-
-
 * {
     box-sizing: border-box;
 }
@@ -20,9 +18,8 @@ copy{
 body {
     font-family: raleway, sans-serif;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
+    margin: 0 auto 0 auto;
+
 }
 
 .topnav {
@@ -154,4 +151,33 @@ div.button:hover {
 
 ::-moz-focus-inner {
     border: 0;
+}
+
+div#linkjes ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 10px;
+}
+
+div#linkjes ul li {
+    padding:5px;
+}
+
+div#linkjes ul li a {
+    text-decoration: none;
+    color: #17252A;
+}
+
+div#linkjes ul li a:hover {
+    color: #3AAFA9;
+}
+
+div#footer {
+    background-color: #949494;
+    text-align: center;
+    padding: 15px;
+}
+
+div#footer p {
+    margin-bottom: 0;
 }

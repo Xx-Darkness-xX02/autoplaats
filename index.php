@@ -80,6 +80,11 @@
         reprehenderit rerum sequi tenetur, ut voluptas.
     </p>
 </div>
+
+<div id="boven">
+    <button onclick="topFunction()" id="myBtn" title="">naar boven</button>
+</div>
+
 <div id="linkjes">
     <ul>
         <li><a href="">privacy</a></li>
@@ -89,12 +94,10 @@
     </ul>
 </div>
 
-
-<div id="boven">
-    <button onclick="topFunction()" id="myBtn" title="">naar boven</button>
+<div id="footer">
+    <img src="image/car-logo-clip-art-png-16.png"><br />
+    <p>(c) copyright 2019, Xx-Darkness-xX02, alle rechten voorbehouden </p>
 </div>
-
-
 <script>
     function myFunction() {
         var x = document.getElementById("myLinks");
