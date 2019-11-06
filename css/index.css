@@ -153,6 +153,10 @@ div.button:hover {
     border: 0;
 }
 
+div#linkjes {
+    padding: 15px;
+}
+
 div#linkjes ul {
     list-style: none;
     padding-left: 0;

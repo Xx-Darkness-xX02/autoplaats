@@ -16,7 +16,7 @@
     <a href="index.php" class="active">home</a>
     <div id="myLinks">
         <a href="#">zoeken</a>
-        <a href="#">verkopen</a>
+        <a href="verkopen.php">verkopen</a>
         <a href="#">over</a>
     </div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
