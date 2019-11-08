@@ -23,7 +23,7 @@
 <div class="container">
     <div id="formulier_container">
         <div id="formulier_holder">
-            <form action="" method="post">
+            <form action="upload.php" method="post" enctype="multipart/form-data">
                 <label for="merk">merk:</label>
                 <input type="text" name="merk"> <br/>
                 <label for="model">model:</label>
@@ -33,16 +33,13 @@
                 <label for="kilmometerstand">kilometerstand:</label>
                 <input type="text" name="kilometerstand"><br/>
                 <label for="brandstof">brandstof:</label>
-                <input class="brandstof" type="radio" name="brandstof">
-                <p class="brandstof_type">benzine</p>
-                <input class="brandstof" type="radio" name="brandstof">
-                <p class="brandstof_type">diesel</p>
-                <input class="brandstof" type="radio" name="brandstof">
-                <p class="brandstof_type">hybride</p>
-                <input class="brandstof" type="radio" name="brandstof">
-                <p class="brandstof_type">LPG</p>
-                <input class="brandstof" type="radio" name="brandstof">
-                <p class="brandstof_type">Elektrisch</p><br/>
+                <select name="brandstof" id="brandstof">
+                    <option class="benzine" value="benzine">benzine</option>
+                    <option class="diesel" value="diesel">diesel</option>
+                    <option class="LPG" value="LPG">LPG</option>
+                    <option class="hybride" value="hybride">hybride</option>
+                    <option class="elektrisch" value="elektrisch">elektrisch</option>
+                </select><br />
                 <label for="transmissie">transmissie:</label>
                 <input class="transmissie" type="radio" name="transmissie">
                 <p class="transmissie_type">handgeschakeld</p>
@@ -50,12 +47,37 @@
                 <p class="transmissie_type">automaat</p><br/>
                 <label for="carrosserie">carrosserie:</label>
                 <input type="text" name="carrosserie"><br/>
-                <input type="button" value="klik hier">
+                <label for="prijs">prijs:</label>
+                <input type="text" name="prijs" value="€"><br />
+                <label for="afbeelding_auto">afbeelding:</label>
+                <input class="file" type="file" name="fileToUpload">
+                <input class="submit" type="submit" name="submit" value="klik hier">
             </form>
         </div>
     </div>
-
 </div>
+
+<?php
+if (isset($_POST['submit'])) {
+    $merk = $_POST['merk'];
+    $model = $_POST['model'];
+    $kenteken = $_POST['kenteken'];
+    $kilometerstand = $_POST['kilometerstand'];
+    $brandstof = $_POST['brandstof'];
+    $transmissie = $_POST['transmissie'];
+    $carrosserie = $_POST['carrosserie'];
+    $prijs = $_POST['prijs'];
+    $bedrijf = $_FILES['fileToUpload']['name'];
+     $dbc = mysqli_connect("localhost", "root", "", "auto");
+     $query = "INSERT INTO voertuigen (merk, model, kenteken, brandstof, transmissie, carrosserie, afbeelding) VALUES ('$merk', '$model', '$kenteken', '$brandstof', '$transmissie', '$carrosserie', '$bedrijf')";
+     mysqli_query($dbc, $query);
+     mysqli_close($dbc);
+}
+
+
+
+?>
+
 <script>
     function myFunction() {
         var x = document.getElementById("myLinks");
